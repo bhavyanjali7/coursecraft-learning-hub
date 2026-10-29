@@ -10,33 +10,251 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as FacultyRouteImport } from './routes/faculty'
+import { Route as StudentRouteImport } from './routes/student'
+import { Route as FacultyIndexRouteImport } from './routes/faculty.index'
+import { Route as FacultyAnalyticsRouteImport } from './routes/faculty.analytics'
+import { Route as FacultyCoursesRouteImport } from './routes/faculty.courses'
+import { Route as FacultyMaterialsRouteImport } from './routes/faculty.materials'
+import { Route as FacultyQuizzesRouteImport } from './routes/faculty.quizzes'
+import { Route as FacultyStudentsRouteImport } from './routes/faculty.students'
+import { Route as StudentIndexRouteImport } from './routes/student.index'
+import { Route as StudentMaterialsRouteImport } from './routes/student.materials'
+import { Route as StudentPathRouteImport } from './routes/student.path'
+import { Route as StudentPerformanceRouteImport } from './routes/student.performance'
+import { Route as StudentQuizzesRouteImport } from './routes/student.quizzes'
+import { Route as StudentRecommendationsRouteImport } from './routes/student.recommendations'
+import { Route as StudentSummarizeRouteImport } from './routes/student.summarize'
+import { Route as StudentTutorRouteImport } from './routes/student.tutor'
+import { Route as FacultyQuizQuizIdRouteImport } from './routes/faculty.quiz.$quizId'
+import { Route as StudentQuizQuizIdRouteImport } from './routes/student.quiz.$quizId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FacultyRoute = FacultyRouteImport.update({
+  id: '/faculty',
+  path: '/faculty',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudentRoute = StudentRouteImport.update({
+  id: '/student',
+  path: '/student',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FacultyIndexRoute = FacultyIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => FacultyRoute,
+} as any)
+const FacultyAnalyticsRoute = FacultyAnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => FacultyRoute,
+} as any)
+const FacultyCoursesRoute = FacultyCoursesRouteImport.update({
+  id: '/courses',
+  path: '/courses',
+  getParentRoute: () => FacultyRoute,
+} as any)
+const FacultyMaterialsRoute = FacultyMaterialsRouteImport.update({
+  id: '/materials',
+  path: '/materials',
+  getParentRoute: () => FacultyRoute,
+} as any)
+const FacultyQuizzesRoute = FacultyQuizzesRouteImport.update({
+  id: '/quizzes',
+  path: '/quizzes',
+  getParentRoute: () => FacultyRoute,
+} as any)
+const FacultyStudentsRoute = FacultyStudentsRouteImport.update({
+  id: '/students',
+  path: '/students',
+  getParentRoute: () => FacultyRoute,
+} as any)
+const StudentIndexRoute = StudentIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => StudentRoute,
+} as any)
+const StudentMaterialsRoute = StudentMaterialsRouteImport.update({
+  id: '/materials',
+  path: '/materials',
+  getParentRoute: () => StudentRoute,
+} as any)
+const StudentPathRoute = StudentPathRouteImport.update({
+  id: '/path',
+  path: '/path',
+  getParentRoute: () => StudentRoute,
+} as any)
+const StudentPerformanceRoute = StudentPerformanceRouteImport.update({
+  id: '/performance',
+  path: '/performance',
+  getParentRoute: () => StudentRoute,
+} as any)
+const StudentQuizzesRoute = StudentQuizzesRouteImport.update({
+  id: '/quizzes',
+  path: '/quizzes',
+  getParentRoute: () => StudentRoute,
+} as any)
+const StudentRecommendationsRoute = StudentRecommendationsRouteImport.update({
+  id: '/recommendations',
+  path: '/recommendations',
+  getParentRoute: () => StudentRoute,
+} as any)
+const StudentSummarizeRoute = StudentSummarizeRouteImport.update({
+  id: '/summarize',
+  path: '/summarize',
+  getParentRoute: () => StudentRoute,
+} as any)
+const StudentTutorRoute = StudentTutorRouteImport.update({
+  id: '/tutor',
+  path: '/tutor',
+  getParentRoute: () => StudentRoute,
+} as any)
+const FacultyQuizQuizIdRoute = FacultyQuizQuizIdRouteImport.update({
+  id: '/quiz/$quizId',
+  path: '/quiz/$quizId',
+  getParentRoute: () => FacultyRoute,
+} as any)
+const StudentQuizQuizIdRoute = StudentQuizQuizIdRouteImport.update({
+  id: '/quiz/$quizId',
+  path: '/quiz/$quizId',
+  getParentRoute: () => StudentRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/faculty': typeof FacultyRouteWithChildren
+  '/student': typeof StudentRouteWithChildren
+  '/faculty/analytics': typeof FacultyAnalyticsRoute
+  '/faculty/courses': typeof FacultyCoursesRoute
+  '/faculty/materials': typeof FacultyMaterialsRoute
+  '/faculty/quizzes': typeof FacultyQuizzesRoute
+  '/faculty/students': typeof FacultyStudentsRoute
+  '/student/materials': typeof StudentMaterialsRoute
+  '/student/path': typeof StudentPathRoute
+  '/student/performance': typeof StudentPerformanceRoute
+  '/student/quizzes': typeof StudentQuizzesRoute
+  '/student/recommendations': typeof StudentRecommendationsRoute
+  '/student/summarize': typeof StudentSummarizeRoute
+  '/student/tutor': typeof StudentTutorRoute
+  '/faculty/': typeof FacultyIndexRoute
+  '/student/': typeof StudentIndexRoute
+  '/faculty/quiz/$quizId': typeof FacultyQuizQuizIdRoute
+  '/student/quiz/$quizId': typeof StudentQuizQuizIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/faculty/analytics': typeof FacultyAnalyticsRoute
+  '/faculty/courses': typeof FacultyCoursesRoute
+  '/faculty/materials': typeof FacultyMaterialsRoute
+  '/faculty/quizzes': typeof FacultyQuizzesRoute
+  '/faculty/students': typeof FacultyStudentsRoute
+  '/student/materials': typeof StudentMaterialsRoute
+  '/student/path': typeof StudentPathRoute
+  '/student/performance': typeof StudentPerformanceRoute
+  '/student/quizzes': typeof StudentQuizzesRoute
+  '/student/recommendations': typeof StudentRecommendationsRoute
+  '/student/summarize': typeof StudentSummarizeRoute
+  '/student/tutor': typeof StudentTutorRoute
+  '/faculty': typeof FacultyIndexRoute
+  '/student': typeof StudentIndexRoute
+  '/faculty/quiz/$quizId': typeof FacultyQuizQuizIdRoute
+  '/student/quiz/$quizId': typeof StudentQuizQuizIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/faculty': typeof FacultyRouteWithChildren
+  '/student': typeof StudentRouteWithChildren
+  '/faculty/analytics': typeof FacultyAnalyticsRoute
+  '/faculty/courses': typeof FacultyCoursesRoute
+  '/faculty/materials': typeof FacultyMaterialsRoute
+  '/faculty/quizzes': typeof FacultyQuizzesRoute
+  '/faculty/students': typeof FacultyStudentsRoute
+  '/student/materials': typeof StudentMaterialsRoute
+  '/student/path': typeof StudentPathRoute
+  '/student/performance': typeof StudentPerformanceRoute
+  '/student/quizzes': typeof StudentQuizzesRoute
+  '/student/recommendations': typeof StudentRecommendationsRoute
+  '/student/summarize': typeof StudentSummarizeRoute
+  '/student/tutor': typeof StudentTutorRoute
+  '/faculty/': typeof FacultyIndexRoute
+  '/student/': typeof StudentIndexRoute
+  '/faculty/quiz/$quizId': typeof FacultyQuizQuizIdRoute
+  '/student/quiz/$quizId': typeof StudentQuizQuizIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/faculty'
+    | '/student'
+    | '/faculty/analytics'
+    | '/faculty/courses'
+    | '/faculty/materials'
+    | '/faculty/quizzes'
+    | '/faculty/students'
+    | '/student/materials'
+    | '/student/path'
+    | '/student/performance'
+    | '/student/quizzes'
+    | '/student/recommendations'
+    | '/student/summarize'
+    | '/student/tutor'
+    | '/faculty/'
+    | '/student/'
+    | '/faculty/quiz/$quizId'
+    | '/student/quiz/$quizId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/faculty/analytics'
+    | '/faculty/courses'
+    | '/faculty/materials'
+    | '/faculty/quizzes'
+    | '/faculty/students'
+    | '/student/materials'
+    | '/student/path'
+    | '/student/performance'
+    | '/student/quizzes'
+    | '/student/recommendations'
+    | '/student/summarize'
+    | '/student/tutor'
+    | '/faculty'
+    | '/student'
+    | '/faculty/quiz/$quizId'
+    | '/student/quiz/$quizId'
+  id:
+    | '__root__'
+    | '/'
+    | '/faculty'
+    | '/student'
+    | '/faculty/analytics'
+    | '/faculty/courses'
+    | '/faculty/materials'
+    | '/faculty/quizzes'
+    | '/faculty/students'
+    | '/student/materials'
+    | '/student/path'
+    | '/student/performance'
+    | '/student/quizzes'
+    | '/student/recommendations'
+    | '/student/summarize'
+    | '/student/tutor'
+    | '/faculty/'
+    | '/student/'
+    | '/faculty/quiz/$quizId'
+    | '/student/quiz/$quizId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  FacultyRoute: typeof FacultyRouteWithChildren
+  StudentRoute: typeof StudentRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +266,189 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faculty': {
+      id: '/faculty'
+      path: '/faculty'
+      fullPath: '/faculty'
+      preLoaderRoute: typeof FacultyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/student': {
+      id: '/student'
+      path: '/student'
+      fullPath: '/student'
+      preLoaderRoute: typeof StudentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faculty/': {
+      id: '/faculty/'
+      path: '/'
+      fullPath: '/faculty/'
+      preLoaderRoute: typeof FacultyIndexRouteImport
+      parentRoute: typeof FacultyRoute
+    }
+    '/faculty/analytics': {
+      id: '/faculty/analytics'
+      path: '/analytics'
+      fullPath: '/faculty/analytics'
+      preLoaderRoute: typeof FacultyAnalyticsRouteImport
+      parentRoute: typeof FacultyRoute
+    }
+    '/faculty/courses': {
+      id: '/faculty/courses'
+      path: '/courses'
+      fullPath: '/faculty/courses'
+      preLoaderRoute: typeof FacultyCoursesRouteImport
+      parentRoute: typeof FacultyRoute
+    }
+    '/faculty/materials': {
+      id: '/faculty/materials'
+      path: '/materials'
+      fullPath: '/faculty/materials'
+      preLoaderRoute: typeof FacultyMaterialsRouteImport
+      parentRoute: typeof FacultyRoute
+    }
+    '/faculty/quizzes': {
+      id: '/faculty/quizzes'
+      path: '/quizzes'
+      fullPath: '/faculty/quizzes'
+      preLoaderRoute: typeof FacultyQuizzesRouteImport
+      parentRoute: typeof FacultyRoute
+    }
+    '/faculty/students': {
+      id: '/faculty/students'
+      path: '/students'
+      fullPath: '/faculty/students'
+      preLoaderRoute: typeof FacultyStudentsRouteImport
+      parentRoute: typeof FacultyRoute
+    }
+    '/student/': {
+      id: '/student/'
+      path: '/'
+      fullPath: '/student/'
+      preLoaderRoute: typeof StudentIndexRouteImport
+      parentRoute: typeof StudentRoute
+    }
+    '/student/materials': {
+      id: '/student/materials'
+      path: '/materials'
+      fullPath: '/student/materials'
+      preLoaderRoute: typeof StudentMaterialsRouteImport
+      parentRoute: typeof StudentRoute
+    }
+    '/student/path': {
+      id: '/student/path'
+      path: '/path'
+      fullPath: '/student/path'
+      preLoaderRoute: typeof StudentPathRouteImport
+      parentRoute: typeof StudentRoute
+    }
+    '/student/performance': {
+      id: '/student/performance'
+      path: '/performance'
+      fullPath: '/student/performance'
+      preLoaderRoute: typeof StudentPerformanceRouteImport
+      parentRoute: typeof StudentRoute
+    }
+    '/student/quizzes': {
+      id: '/student/quizzes'
+      path: '/quizzes'
+      fullPath: '/student/quizzes'
+      preLoaderRoute: typeof StudentQuizzesRouteImport
+      parentRoute: typeof StudentRoute
+    }
+    '/student/recommendations': {
+      id: '/student/recommendations'
+      path: '/recommendations'
+      fullPath: '/student/recommendations'
+      preLoaderRoute: typeof StudentRecommendationsRouteImport
+      parentRoute: typeof StudentRoute
+    }
+    '/student/summarize': {
+      id: '/student/summarize'
+      path: '/summarize'
+      fullPath: '/student/summarize'
+      preLoaderRoute: typeof StudentSummarizeRouteImport
+      parentRoute: typeof StudentRoute
+    }
+    '/student/tutor': {
+      id: '/student/tutor'
+      path: '/tutor'
+      fullPath: '/student/tutor'
+      preLoaderRoute: typeof StudentTutorRouteImport
+      parentRoute: typeof StudentRoute
+    }
+    '/faculty/quiz/$quizId': {
+      id: '/faculty/quiz/$quizId'
+      path: '/quiz/$quizId'
+      fullPath: '/faculty/quiz/$quizId'
+      preLoaderRoute: typeof FacultyQuizQuizIdRouteImport
+      parentRoute: typeof FacultyRoute
+    }
+    '/student/quiz/$quizId': {
+      id: '/student/quiz/$quizId'
+      path: '/quiz/$quizId'
+      fullPath: '/student/quiz/$quizId'
+      preLoaderRoute: typeof StudentQuizQuizIdRouteImport
+      parentRoute: typeof StudentRoute
+    }
   }
 }
 
+interface FacultyRouteChildren {
+  FacultyAnalyticsRoute: typeof FacultyAnalyticsRoute
+  FacultyCoursesRoute: typeof FacultyCoursesRoute
+  FacultyMaterialsRoute: typeof FacultyMaterialsRoute
+  FacultyQuizzesRoute: typeof FacultyQuizzesRoute
+  FacultyStudentsRoute: typeof FacultyStudentsRoute
+  FacultyIndexRoute: typeof FacultyIndexRoute
+  FacultyQuizQuizIdRoute: typeof FacultyQuizQuizIdRoute
+}
+
+const FacultyRouteChildren: FacultyRouteChildren = {
+  FacultyAnalyticsRoute: FacultyAnalyticsRoute,
+  FacultyCoursesRoute: FacultyCoursesRoute,
+  FacultyMaterialsRoute: FacultyMaterialsRoute,
+  FacultyQuizzesRoute: FacultyQuizzesRoute,
+  FacultyStudentsRoute: FacultyStudentsRoute,
+  FacultyIndexRoute: FacultyIndexRoute,
+  FacultyQuizQuizIdRoute: FacultyQuizQuizIdRoute,
+}
+
+const FacultyRouteWithChildren =
+  FacultyRoute._addFileChildren(FacultyRouteChildren)
+
+interface StudentRouteChildren {
+  StudentMaterialsRoute: typeof StudentMaterialsRoute
+  StudentPathRoute: typeof StudentPathRoute
+  StudentPerformanceRoute: typeof StudentPerformanceRoute
+  StudentQuizzesRoute: typeof StudentQuizzesRoute
+  StudentRecommendationsRoute: typeof StudentRecommendationsRoute
+  StudentSummarizeRoute: typeof StudentSummarizeRoute
+  StudentTutorRoute: typeof StudentTutorRoute
+  StudentIndexRoute: typeof StudentIndexRoute
+  StudentQuizQuizIdRoute: typeof StudentQuizQuizIdRoute
+}
+
+const StudentRouteChildren: StudentRouteChildren = {
+  StudentMaterialsRoute: StudentMaterialsRoute,
+  StudentPathRoute: StudentPathRoute,
+  StudentPerformanceRoute: StudentPerformanceRoute,
+  StudentQuizzesRoute: StudentQuizzesRoute,
+  StudentRecommendationsRoute: StudentRecommendationsRoute,
+  StudentSummarizeRoute: StudentSummarizeRoute,
+  StudentTutorRoute: StudentTutorRoute,
+  StudentIndexRoute: StudentIndexRoute,
+  StudentQuizQuizIdRoute: StudentQuizQuizIdRoute,
+}
+
+const StudentRouteWithChildren =
+  StudentRoute._addFileChildren(StudentRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  FacultyRoute: FacultyRouteWithChildren,
+  StudentRoute: StudentRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
