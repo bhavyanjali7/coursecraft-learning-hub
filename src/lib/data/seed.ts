@@ -71,7 +71,7 @@ export function createSeed(): DB {
     quizzes: [
       { id: "quiz-ml-1", title: "Unit 2 · Model Evaluation", courseId: "ml", status: "published", timeLimit: 10, questions: pick("q-ml-2", "q-ml-3", "q-ml-4", "q-ml-7", "q-ml-5"), createdAt: "2026-10-18", publishedAt: "2026-10-19", dueDate: "2026-11-08" },
       { id: "quiz-dl-1", title: "CNN Fundamentals Check", courseId: "dl", status: "published", timeLimit: 8, questions: pick("q-dl-1", "q-dl-2", "q-dl-4", "q-dl-3"), createdAt: "2026-10-21", publishedAt: "2026-10-22", dueDate: "2026-11-05" },
-      { id: "quiz-nlp-draft", title: "Transformers Deep Dive (Draft)", courseId: "nlp", status: "draft", timeLimit: 12, questions: pick("q-nlp-3", "q-nlp-4", "q-nlp-5"), createdAt: "2026-10-27" },
+      { id: "quiz-nlp-draft", title: "Transformers Deep Dive", courseId: "nlp", status: "draft", timeLimit: 12, questions: pick("q-nlp-3", "q-nlp-4", "q-nlp-5"), createdAt: "2026-10-27" },
     ],
     submissions: [
       { id: "s1", quizId: "quiz-ml-1", studentId: "stu-2", studentName: "Rahul Verma", answers: [2, 1, 1, 1, 1], score: 5, total: 5, timeTaken: 412, submittedAt: "2026-10-20T10:12:00Z" },
