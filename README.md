@@ -17,14 +17,6 @@ Used reusable components and keep data operations isolated for future backend in
 Build the actual working app, not just a landing page. Prioritize a polished, functional demo with all major screens connected. Do not mention that this is a college or final-year project anywhere on the website.
 
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/f6ea29b2-b2a0-5cb5-9530-dc4fa5c31b04).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
 ## Development
 
 Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
