@@ -1,10 +1,6 @@
 # Learnwise
 
-Build a responsive educational web app called LearnWise with a premium, professional academic design. Use React and mock data only; no real backend or AI integrations yet.
-
-Use a rich dark theme with midnight navy, charcoal, forest green, muted gold, and warm ivory. Include a fully styled light/dark mode toggle. Avoid generic AI designs, gradients, glowing effects, and futuristic fonts.
-
-Create two demo login roles:
+Two demo login roles:
 
 Student: Bhavyanjali, CSE-AIML
 
@@ -16,11 +12,10 @@ Faculty portal: Dashboard, courses, student performance, upload study materials 
 
 Make the app interactive, with working navigation, search, filters, quiz scoring, progress tracking, and notifications. Published quizzes must appear in the student portal; student submissions must update faculty analytics. Save shared demo data across page refreshes using browser storage.
 
-Use reusable components and keep data operations isolated for future backend integration. Use mock responses for AI features and clearly avoid claiming real AI processing. Ensure drafts are hidden from students and each role sees its appropriate portal.
+Used reusable components and keep data operations isolated for future backend integration. Used mock responses for AI features and clearly avoid claiming real AI processing. Ensure drafts are hidden from students and each role sees its appropriate portal.
 
 Build the actual working app, not just a landing page. Prioritize a polished, functional demo with all major screens connected. Do not mention that this is a college or final-year project anywhere on the website.
 
-This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
